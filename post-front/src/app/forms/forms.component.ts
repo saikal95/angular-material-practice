@@ -30,6 +30,7 @@ export class FormsComponent implements OnInit, OnDestroy {
     };
     this.messageService.postMessage(messageData).subscribe(()=> {
       this.messageService.getMessages();
+      this.loading = false;
     });
 
   }
