@@ -1,0 +1,39 @@
+<mat-card class="mat-app-background">
+  <mat-card-content>
+    <form #f="ngForm" fxLayout="column" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline">
+        <mat-label>Author</mat-label>
+        <input name="author" required matInput ngModel/>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Message</mat-label>
+        <textarea
+          name="message"
+          required
+          ngModel
+          matInput
+          cdkTextareaAutosize
+          cdkAutosizeMinRows="3"
+        ></textarea>
+      </mat-form-field>
+      <div>
+        <button
+          type="submit"
+          mat-raised-button
+          color="primary"
+          [disabled]="loading"
+        ><span *ngIf="!loading" class="pl-2">Send</span>
+        </button>
+        <mat-spinner *ngIf="loading">
+        </mat-spinner>
+
+      </div>
+    </form>
+  </mat-card-content>
+  <div>
+    <mat-card-footer>
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </mat-card-footer>
+  </div>
+</mat-card>
+

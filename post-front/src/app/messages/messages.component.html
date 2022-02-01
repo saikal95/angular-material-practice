@@ -1,0 +1,14 @@
+<mat-spinner *ngIf="loading">
+</mat-spinner>
+<div *ngIf="!loading">
+  <div class="container list-group col-8" *ngFor="let message of messages; let i = index">
+    <mat-card class="example-card">
+      <mat-card-content>
+        <span> <strong>Date:</strong>{{date[i]}}</span>
+        <div><strong>Message:</strong> {{message.message}}</div>
+        <div> <strong>Author</strong>: {{message.author}}</div>
+      </mat-card-content>
+    </mat-card>
+</div>
+</div>
+
